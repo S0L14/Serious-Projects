@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void jurisprudence()
+{
+    string casename;
+    string vol;
+    string year;
+    getline (cin, casename);
+    getline (cin, vol);
+    getline (cin, year);
+    cout << "CASE NAME: " << casename << endl;
+    cout << "VOL. #: " << vol << endl;
+    cout << "YEAR: " << year << endl;
+    cout << "Formatted Citation:" << endl;
+    cout << casename << ", " << vol << " (" << year << ")";
+}
+
+void primary ()
+{
+    string casename;
+    string vol;
+    string page;
+    string year;
+    getline (cin, casename);
+    getline (cin, vol);
+    getline (cin, page);
+    getline (cin, year);
+    cout << "CASE NAME: " << casename << endl;
+    cout << "VOL. #: " << vol << endl;
+    cout << "PAGE: " << page << endl;
+    cout << "YEAR: " << year << endl << endl;
+    cout << "Formatted Citation:" << endl;
+    cout << casename << ", " << vol << ", " << page << " (" << year << ")";
+}
+
+void secondary ()
+{
+    string casename;
+    string grnumber;
+    string dod;
+    string vol;
+    getline (cin, casename);
+    getline (cin, grnumber);
+    getline (cin, dod);
+    getline (cin, vol);
+    cout << "CASE NAME: " << casename << endl;
+    cout << "G.R. #: " << grnumber << endl;
+    cout << "DECISION DATE: " << dod << endl;
+    cout << "VOL. #: " << vol << endl << endl;
+    cout << "Formatted Citation:" << endl;
+    cout << casename << ", " << grnumber << ", " << dod << ", " << vol;
+}
+
+int main() 
+{
+    string casetype;
+    cout << "Legal Case Citation Formatter (PH LAW)" << endl << endl;
+    getline (cin, casetype);
+    cout << "CASE TYPE (Jurisprudence, Primary, Secondary): " << casetype << endl << endl;
+    if (casetype == "Secondary")
+    {
+        secondary();
+    }
+    else if (casetype == "Jurisprudence")
+    {
+        jurisprudence();
+    }
+    else if (casetype == "Primary")
+    {
+        primary();
+    }
+    return 0;
+
+}
