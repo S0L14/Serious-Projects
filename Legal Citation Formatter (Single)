@@ -54,6 +54,11 @@ void secondary ()
     cout << casename << ", " << grnumber << ", " << dod << ", " << vol;
 }
 
+void unknown () 
+{
+    cout << "Unidentified case type. Please select from Jurisprudence, Primary, and Secondary cases.";
+}
+
 int main() 
 {
     string casetype;
@@ -72,6 +77,11 @@ int main()
     {
         primary();
     }
+    else 
+    {
+        unknown();
+    }
+
     return 0;
 
 }
