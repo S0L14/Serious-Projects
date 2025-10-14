@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int total = 0;
+    int choice;
+    int nights;
+    int cost;
+    char ans;
+    cout << "HOTEL RESERVATION SIMULATION" << endl;
+    cout << "By FIFTH IMPACT" << endl << endl;
+    do
+    {
+        cout << "Room Types: " << endl;
+        cout << "1. Single Room (PHP 500 per night)" << endl;
+        cout << "2. Double Room (PHP 800 per night)" << endl;
+        cout << "3. Suite (PHP 1500 per night)" << endl;
+        cout << "Select: " << endl;
+        cin >> choice;
+        cout << "Number of nights: ";
+        cin >> nights;
+        if (choice == 1)
+        {
+            cost = 500 * nights;
+        }
+        else if (choice == 2)
+        {
+            cost = 800 * nights;
+        }
+        else if (choice == 3)
+        {
+            cost = 1500 * nights;
+        }
+        else
+        {
+            cout << "INVALID CHOICE." << endl;
+            cost = 0;
+        }
+        total = total + cost;
+        cout << "Room Cost: PHP" << cost << endl << endl;
+        cout << "Book another room? (y/n): ";
+        cin >> ans;
+        cout << endl;
+    }
+    while (ans == 'y' || ans == 'Y');
+    cout << "Would you like to add services? (y/n): ";
+    cin >> ans;
+    cout << endl;
+    if (ans == 'y' || ans == 'Y')
+    {
+        do
+        {
+            cout << "Available Services:" << endl;
+            cout << "1. Breakfast (PHP 150)" << endl;
+            cout << "2. Airport Shuttle (PHP 300)" << endl;
+            cout << "3. Spa (PHP 500)" << endl;
+            cout << "4. Parking (PHP 200)" << endl;
+            cout << "Enter choice: ";
+            cin >> choice;
+            if (choice == 1)
+            {
+                total = total + 150;
+                cout << "+ Breakfast" << endl;
+            }
+            else if (choice == 2)
+            {
+                total = total + 300;
+                cout << "+ Airport Shuttle" << endl;
+            }
+            else if (choice == 3)
+            {
+                total = total + 500;
+                cout << "+ Spa" << endl;
+            }
+            else if (choice == 4)
+            {
+                total = total + 200;
+                cout << "+ Parking" << endl;
+            }
+            else
+            {
+                cout << "INVALID." << endl;
+            }
+            cout << "Do you wish to add more services? (y/n): ";
+            cin >> ans;
+            cout << endl;
+        }
+        while (ans == 'y' || ans == 'Y');
+    }
+    cout << "GRAND TOTAL BILL: PHP " << total << endl;
+    cout << "We are pleased in your choice in booking with our hotel. Do come again.";
+
+}
